@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Fly Smart</title>
+</head>
+<body data-spy="scroll" data-target=".scroll" data-offset="50">
+
+<div id="side-nav">
+    <ul class="scroll">
+        <li class="activeWhite" id="scroll-intro"><a href="#sec-intro"></a></li>
+        <li class="inactive" id="scroll-delays"><a href="#sec-delays"></a></li>
+        <li class="inactive" id="scroll-denied"><a href="#sec-denied"></a></li>
+        <li class="inactive" id="scroll-scatter"><a href="#sec-scatter"></a></li>
+        <li class="inactive" id="scroll-findings"><a href="#sec-findings"></a></li>
+    </ul>
+</div>
+
+<section class="intro">
+    <h1 class="title">It’s your choice<br>to make your trips less stressful</h1>
+    <h3 class="intro">The <a
+            class="news-link"
+            href="https://www.theguardian.com/world/video/2017/apr/11/united-airlines-passenger-forcibly-removed-from-overbooked-flight-video">recent
+        news</a> concerning how United Airlines dealt with overbooked passengers reminded us of how the flight
+        experience is
+        an important part of our traveling satisfaction. Through these visualizations, we aim to present how well
+        different airlines deal with unexpected unpleasant circumstances such as delays and
+        overbooking. We hope that this will help you make better decisions when it comes to selecting airlines.</h3>
+    <br><br>
+    <p class="intro">BROUGHT TO YOU BY<br>Matt Hsu, Mind Apivessa and Sean Kim<br><br>April 2017</p>
+</section>
+
+<section class="delays" id="sec-delays">
+    <h1>Carrier Delays</h1>
+    <h3>Has your travel schedule ever been ruined because of a flight delay? If your flight is delayed (15 minutes or
+        more)
+        as a result of a carrier issue (maintenence, late flight crew, etc.) how long on average will you be waiting for
+        each different
+        airline?
+    </h3>
+    <div class="container">
+        <div class="center">
+            <ul class="filter">
+                <li><a href="#" class="delay-evt active" id="delay-annual">Annual Avg</a></li>
+                <li><a href="#" class="delay-evt q1" id="delay-q1">Quarter 1</a></li>
+                <li><a href="#" class="delay-evt q2" id="delay-q2">Quarter 2</a></li>
+                <li><a href="#" class="delay-evt q3" id="delay-q3">Quarter 3</a></li>
+                <li><a href="#" class="delay-evt q4" id="delay-q4">Quarter 4</a></li>
+            </ul>
+            <div class="viz bargraph"></div>
+        </div>
+    </div>
+</section>
+
+<section class="boarding">
+    <h1>Boarding</h1>
+    <h3>What’s worse than flight delays? Getting denied boarding. Here, we present a visualization showing how many
+        passengers
+        are denied boarding either involuntarily or voluntarily for each different carrier.</h3>
+    <div class="container">
+        <div class="center">
+            <ul class="filter">
+                <li><a href="#" class="evt active" id="boarding-annual">2016</a></li>
+                <li><a href="#" class="evt q1" id="boarding-q1">Quarter 1</a></li>
+                <li><a href="#" class="evt q2" id="boarding-q2">Quarter 2</a></li>
+                <li><a href="#" class="evt q3" id="boarding-q3">Quarter 3</a></li>
+                <li><a href="#" class="evt q4" id="boarding-q4">Quarter 4</a></li>
+            </ul>
+            <table class="org-filter">
+                <tr>
+                    <td>
+                        <div class="desc denied active">
+                            <h4>Denied Boarding</h4>
+                            <p>You might have all your reservations confirmed and be looking forward to spending your
+                                day
+                                at the beach, eating at nice restaurants, and sharing good times with your loved ones.
+                                But those dreams are ruined (or at least delayed) when your carrier refuses to let you
+                                board at the check-in desk (or offers you enough money to delay your vacation).</p>
+                        </div>
+                        <div class="desc involuntary">
+                            <h4>Involuntarily Denied Boarding</h4>
+                            <p>You are involuntarily denied boarding if your air carrier refuses to
+                                allow you to board your flight even though you pose no health, safety, or security risk
+                                to
+                                the
+                                air carrier.</p>
+                        </div>
+
+                        <div class="desc voluntary">
+                            <h4>Voluntarily Denied Boarding</h4>
+                            <p>In some cases when your flight is overbooked, the air carrier
+                                will call for volunteers to give up their seats in exchange for benefits. If your
+                                schedule
+                                is
+                                flexible and you are willing to do so, you are eligible for compensation from the air
+                                carrier.
+                                Let’s find out which air carrier is most efficient in dealing with overbooking and
+                                minimizing
+                                voluntarily denied boarding.</p>
+                        </div>
+                        <div class="desc compensated">
+                            <h4>Involuntarily Denied Boarding - Compensation</h4>
+                            <p>In most cases when you are involuntarily denied boarding, you are qualified for
+                                compensation
+                                in addition to a rebooked flight. This reflects the quality of air carriers in offering
+                                effective flight service. Let’s find out how well each airline does.</p>
+                        </div>
+                        <div class="desc not-compensated">
+                            <h4>Involuntarily Denied Boarding - No Compensation</h4>
+                            <p>In some cases, you are not qualified for compensation. This data
+                                shows the number of passengers who are involuntarily denied boarding and not being
+                                compensated
+                                for these reasons:
+                                (1) they were accommodated on another that arrived within 1 hour after the
+                                scheduled arrival of the original flight,
+                                (2) substitution of smaller capacity equipment,
+                                (3) failure of passenger to comply with ticketing, check-in, or reconfirmation
+                                procedures or
+                                to
+                                be acceptable for transportation under carrier’s tariff or contract of carriage.</p>
+                        </div>
+                    </td>
+
+                    <td class="org-chart-container">
+                        <table class="org-chart">
+                            <tr>
+                                <td colspan="4" class="denied active" id="boarding-denied">Denied Boarding</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="involuntary" id="boarding-involuntary">Involuntary</td>
+                                <td colspan="2" class="voluntary" id="boarding-voluntary">Voluntary</td>
+                            </tr>
+                            <tr>
+                                <td class="compensated" id="boarding-compensated">Compensated</td>
+                                <td class="not-compensated" id="boarding-not-compensated">Not Compensated</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <div class="viz bargraph"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="center">
+
+        </div>
+    </div>
+</section>
+
+<section class="onboard">
+    <h3>Let's find out how the proportion of voluntary and involuntary denied boarding compare for each individual
+        airline. Hover over a segment of the donut to find out exactly how many passengers were denied boarding!</h3>
+    <div class="container">
+        <ul class="filter">
+            <li><a href="#" class="evt active" id="onboard-annual">2016</a></li>
+            <li><a href="#" class="evt q1" id="onboard-q1">Quarter 1</a></li>
+            <li><a href="#" class="evt q2" id="onboard-q2">Quarter 2</a></li>
+            <li><a href="#" class="evt q3" id="onboard-q3">Quarter 3</a></li>
+            <li><a href="#" class="evt q4" id="onboard-q4">Quarter 4</a></li>
+        </ul>
+        <table class="by-airline">
+            <tr class="">
+                <td class="sidebar-filter-cell">
+                    <div class="sidebar-filter">
+                        <ul>
+                            <li class="instruction">SELECT AN AIR CARRIER</li>
+                            <br>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <div class="viz"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section class="scatter">
+    <h1>What's next?</h1>
+    <h3>What is the correlation between the number of denied boardings and average time delayed attributed to a carrier? Is it possible to pick an airline that has the smallest delay time and the lowest chance of being denied boarding? Hover over each point to find out more! </h3>
+    <div class="container">
+        <ul class="filter">
+            <li><a href="#" class="evt active" id="scatter-annual">2016</a></li>
+            <li><a href="#" class="evt q1" id="scatter-q1">Quarter 1</a></li>
+            <li><a href="#" class="evt q2" id="scatter-q2">Quarter 2</a></li>
+            <li><a href="#" class="evt q3" id="scatter-q3">Quarter 3</a></li>
+            <li><a href="#" class="evt q4" id="scatter-q4">Quarter 4</a></li>
+        </ul>
+        <div class="viz"></div>
+    </div>
+</section>
+
+
+<section class="findings">
+    <h1 class="title">So now you know</h1>
+    <h3 class="intro">After all, it is possible for you to pick an airline that has the smallest delay time and the lowest chance of being denied boarding. However, it seems like it is normal to expect to wait around 40 minutes if your flight is delayed more than 15 minutes as a result of carrier issues. Do we have to consider increasing our flexibility when planning our itineraries, or do airlines have to start finding ways to become more efficient?
+    <br></h3>
+    <br><br>
+    <p class="intro">“Experience does for the soul what education does for the mind.” ― Casey Neistat<br>Pack your bags. Pick the right airline. Go explore.</p>
+</section>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+
+    function avgCarrierDelay(data) {
+        let totalCD = data.reduce((acc, val) => {
+            acc.cd += val.carrier_cd;
+            acc.n += val.num_cd;
+            return acc;
+        }, {cd: 0, n: 0});
+        return totalCD.cd / totalCD.n;
+    }
+
+    function aggregateDelayData(delays) {
+        //get quarterly CD averages
+        var quarterlyAirlineAvg = d3.nest()
+            .key((d) => d.quarter)
+            .key((d) => d.airline)
+            .sortKeys(d3.ascending)
+            .rollup(avgCarrierDelay)
+            .entries(delays);
+
+        var annualAirlineAvg = d3.nest()
+            .key((d) => d.airline)
+            .sortKeys(d3.ascending)
+            .rollup(avgCarrierDelay)
+            .entries(delays);
+
+        let quarterlyAvg = d3.nest()
+            .key((d) => d.quarter)
+            .rollup(avgCarrierDelay)
+            .entries(delays);
+
+        let annualAvg = avgCarrierDelay(delays);
+
+        return {
+            quarterlyAirlineAvg, quarterlyAvg, annualAirlineAvg, annualAvg
+        }
+    }
+    /**
+     * clone a dataset
+     * http://stackoverflow.com/questions/4459928/how-to-deep-clone-in-javascript
+     */
+    function clone(toClone) {
+        return JSON.parse(JSON.stringify(toClone));
+    }
+
+
+    function preprocessBoardingData(d) {
+        let numberCols = "total_involuntary involuntary_compensated total_voluntary total_boardings".split(" ");
+        d.forEach((row) => {
+            numberCols.forEach((c) => {
+                //remove all ,'s in numeric columns
+                row[c] = Number(row[c].replace(/,/g, ''));
+            });
+
+            //calculate derived values
+            row["total_denied"] = row["total_involuntary"] + row["total_voluntary"];
+            row["total_involuntary_not_compensated"] = row["total_involuntary"] - row["involuntary_compensated"];
+        });
+    }
+
+    function preprocessDelaysData(delays, airlineIds) {
+        //type cast the data
+        delays.forEach((d) => {
+            d.airline = airlineIds.find((el) => {
+                return el.Code == d.airline;
+            })["Description"];
+            d.year = Number(d.year);
+            d.quarter = Number(d.quarter);
+            d.month = Number(d.month);
+            d.carrier_cd = Number(d.carrier_cd);
+            d.num_cd = Number(d.num_cd);
+        });
+
+        return aggregateDelayData(delays);
+    };
+
+
+/**************
+ * SCROLLING STUFF
+ *****************/
+(function () {
+
+    $(document).ready(function () {
+        $(document).on("scroll", onScroll);
+    });
+
+    function onScroll(event) {
+        var scrollPos = $(document).scrollTop();
+
+        if (scrollPos < 650) {
+            var currSec = $('.intro');
+            $('#scroll-delays').removeClass();
+            $('#scroll-denied').removeClass();
+            $('#scroll-findings').removeClass();
+            $('#scroll-intro').removeClass();
+            $('#scroll-scatter').removeClass();
+            $('#scroll-intro').addClass('activeWhite');
+            $('#scroll-delays').addClass('inactiveWhite');
+            $('#scroll-denied').addClass('inactiveWhite');
+            $('#scroll-findings').addClass('inactiveWhite');
+            $('#scroll-scatter').addClass('inactiveWhite');
+
+        }
+        if (scrollPos > 650 && scrollPos < 1510) {
+            var currSec = $('.delays');
+            $('#scroll-intro').removeClass();
+            $('#scroll-denied').removeClass();
+            $('#scroll-findings').removeClass();
+            $('#scroll-delays').removeClass();
+            $('#scroll-onboard').removeClass();
+            $('#scroll-scatter').removeClass();
+            $('#scroll-intro').addClass('inactive');
+            $('#scroll-delays').addClass('active');
+            $('#scroll-denied').addClass('inactive');
+            $('#scroll-findings').addClass('inactive');
+            $('#scroll-scatter').addClass('inactive');
+        }
+
+        if (scrollPos > 1510 && scrollPos < 3399) {
+            var currSec = $('.denied');
+            $('#scroll-intro').removeClass();
+            $('#scroll-denied').removeClass();
+            $('#scroll-findings').removeClass();
+            $('#scroll-delays').removeClass();
+            $('#scroll-scatter').removeClass();
+            $('#scroll-intro').addClass('inactive');
+            $('#scroll-delays').addClass('inactive');
+            $('#scroll-denied').addClass('active');
+            $('#scroll-findings').addClass('inactive');
+            $('#scroll-scatter').addClass('inactive');
+
+        }
+
+        if (scrollPos > 3399 && scrollPos < 4000) {
+            var currSec = $('.scatter');
+            $('#scroll-intro').removeClass();
+            $('#scroll-denied').removeClass();
+            $('#scroll-findings').removeClass();
+            $('#scroll-delays').removeClass();
+            $('#scroll-scatter').removeClass();
+            $('#scroll-intro').addClass('inactive');
+            $('#scroll-delays').addClass('inactive');
+            $('#scroll-denied').addClass('inactive');
+            $('#scroll-findings').addClass('inactive');
+            $('#scroll-scatter').addClass('active');
+
+        }
+
+
+        if (scrollPos > 4000) {
+            var currSec = $('.scatter');
+            $('#scroll-intro').removeClass();
+            $('#scroll-denied').removeClass();
+            $('#scroll-findings').removeClass();
+            $('#scroll-delays').removeClass();
+            $('#scroll-scatter').removeClass();
+            $('#scroll-intro').addClass('inactiveWhite');
+            $('#scroll-delays').addClass('inactiveWhite');
+            $('#scroll-denied').addClass('inactiveWhite');
+            $('#scroll-findings').addClass('activeWhite');
+            $('#scroll-scatter').addClass('inactiveWhite');
+
+        }
+    }
+})();
+
+/**************
+ * DELAY BAR CHART
+ *****************/
+let delaysChart =
+(function () {
+    const width = 850;
+    const height = 580;
+
+    const margin = {top: 40, right: 40, bottom: 100, left: 155};
+    const formatter = d3.format(".3n");
+
+    var x, y;
+    var svg = d3.select(".delays .viz")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+
+    function bindFilterHandler(aggregateDelays) {
+        d3.selectAll("a.delay-evt")
+            .on("click", function () {
+                d3.event.preventDefault();
+                let id = this.id;
+
+                var dataset;
+                var datasetAvg;
+                var quarterlyIndex = -1; //unused index
+
+                switch (id) {
+                    case "delay-annual":
+                        dataset = aggregateDelays.annualAirlineAvg;
+                        datasetAvg = aggregateDelays.annualAvg;
+                        break;
+                    case "delay-q1":
+                        quarterlyIndex = 0;
+                        break;
+                    case "delay-q2":
+                        quarterlyIndex = 1;
+                        break;
+                    case "delay-q3":
+                        quarterlyIndex = 2;
+                        break;
+                    case "delay-q4":
+                        quarterlyIndex = 3;
+                        break;
+                }
+
+                if (quarterlyIndex !== -1) {
+                    dataset = aggregateDelays.quarterlyAirlineAvg[quarterlyIndex].values;
+                    datasetAvg = aggregateDelays.quarterlyAvg[quarterlyIndex].value;
+                }
+
+                //toggle active class
+                d3.select("a.delay-evt.active")
+                    .classed("active", false);
+                d3.select("#" + id)
+                    .classed("active", true);
+
+                updateChart(dataset, datasetAvg);
+            });
+    }
+
+    function updateChart(data, avg) {
+
+        //bars - update
+        let bars = svg.selectAll(".bar")
+            .data(data)
+            .attr("class", (d) => "bar " + (d.value < avg ? "green" : "red"));
+        bars.transition()
+            .duration(650)
+            .attr("width", function (d) {
+                return x(d.value);
+            });
+
+        //bars - enter
+        bars.enter()
+            .append("rect")
+            //.attr("class", "bar")
+            .attr("class", (d) => "bar " + (d.value < avg ? "green" : "red"))
+            .attr("x", margin.left)
+            .attr("height", y.bandwidth())
+            .attr("y", function (d) {
+                return y(d.key);
+            })
+            .attr("width", function (d) {
+                return x(d.value);
+            });
+
+        //bars - exit
+        bars.exit()
+            .remove();
+
+        /* TEXT LABELS */
+        //update
+        let labels = svg.selectAll(".bar-label")
+            .data(data)
+            .text((d) => formatter(d.value) + " min");
+        labels.transition()
+            .duration(650)
+            .attr("x", (d) => x(d.value) + 160);
+
+        //enter
+        labels.enter()
+            .append("text")
+            .attr("class", "bar-label")
+            .attr("x", (d) => x(d.value) + 160)
+            .attr("y", (d) => y(d.key) + y.bandwidth() / 2)
+            .text((d) => formatter(d.value) + " min")
+            .style("dominant-baseline", "middle")
+            .style("text-anchor", "left");
+
+        //exit
+        labels.exit()
+            .remove();
+
+        /* AVERAGE LINE */
+        d3.selectAll(".avg").remove();
+        var avgXPos = x(avg) + margin.left;
+
+        svg.append("line")
+            .attr("class", "avg")
+            .attr("x1", avgXPos)
+            .attr("y1", margin.top)
+            .attr("x2", avgXPos)
+            .attr("y2", height - margin.top -60)
+            .style("stroke-width", 1)
+            .style("stroke", "#999999")
+            .style("fill", "none")
+            .style("stroke-dasharray", "5 5");
+
+        svg.append("text")
+            .attr("class", "avg")
+            .attr("x", avgXPos)
+            .attr("y", height - margin.bottom + 20)
+            .text("average:  " + formatter(avg) + "min")
+            .style("text-anchor", "middle")
+    }
+
+    function renderChart(data, avg) {
+        x = d3.scaleLinear()
+            .domain([0, 90])
+            .range([0, width - margin.right - margin.left]);
+
+        y = d3.scaleBand()
+            .domain(data.map(function (d) {
+                return d.key;
+            }))
+            .range([height - margin.bottom, margin.top])
+            .padding(0.1);
+
+        updateChart(data, avg);
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(" + margin.left + "," + (height - margin.bottom) + ")")
+            .call(d3.axisBottom(x).tickValues(x.domain()));
+
+
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(d3.axisLeft(y))
+            .attr("transform", "translate(" + margin.left + "," + 0 + ")")
+
+
+        svg.append("text")
+            .attr("class", "axis-label")
+            .attr("x", width/2)
+            .attr("y", height - margin.bottom + 50)
+            .text("Time Delayed (mins)")
+            //.style("font-size", 20)
+            .style("text-anchor", "middle")
+            .style("dominant-baseline","middle")
+    }
+
+    function init(aggregateDelays) {
+        //aggregateDelays = clone(aggregateDelays);
+        bindFilterHandler(aggregateDelays);
+        renderChart(aggregateDelays.annualAirlineAvg, aggregateDelays.annualAvg);
+    }
+
+    return {init};
+})();
+
+/**************
+ * DENIED BAR CHART
+ *****************/
+//simulate a module to prevent naming conflicts
+let deniedBarchart =
+    (function () {
+    const width = 850;
+    const height = 580;
+    const margin = {top: 40, right: 40, bottom: 100, left: 155};
+    const formatter = d3.format(".3n");
+    var x, y;
+    var activeData;
+    var activeCol;
+
+    let svg = d3.select(".boarding .viz")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    function selectActiveCol(col) {
+        activeCol = col;
+    }
+
+    function selectActiveData(data) {
+        activeData = data;
+    }
+
+    function bindOrgChartHandler() {
+        d3.selectAll(".org-chart td").on("click", function () {
+            d3.event.preventDefault();
+            let id = this.id;
+
+            let activeCol = "";
+            let activeDesc = "";
+            switch (id) {
+                case "boarding-denied":
+                    activeCol = "total_denied";
+                    activeDesc = "denied";
+                    break;
+                case "boarding-involuntary":
+                    activeCol = "total_involuntary";
+                    activeDesc = "involuntary";
+                    break;
+                case "boarding-voluntary":
+                    activeCol = "total_voluntary";
+                    activeDesc = "voluntary";
+                    break;
+                case "boarding-compensated":
+                    activeCol = "involuntary_compensated";
+                    activeDesc = "compensated";
+                    break;
+                case "boarding-not-compensated":
+                    activeCol = "total_involuntary_not_compensated";
+                    activeDesc = "not-compensated";
+                    break;
+            }
+
+            //toggle active class
+            d3.select(".org-chart td.active").classed("active", false);
+            d3.select("#" + id).classed("active", true);
+
+            //toggle active description
+            d3.select(".boarding .org-filter .desc.active")
+                .classed("active",false);
+            d3.select(".boarding .org-filter .desc."+activeDesc)
+                .classed("active",true);
+
+            selectActiveCol(activeCol);
+            updateChart();
+        });
+    }
+
+    function bindTimeFilterHandler(boardingData) {
+        d3.selectAll(".boarding a.evt")
+            .on("click", function () {
+                d3.event.preventDefault();
+                let id = this.id;
+
+                var dataIndex = -1; //random large value
+
+                switch (id) {
+                    case "boarding-annual":
+                        dataIndex = 0;
+                        break;
+                    case "boarding-q1":
+                        dataIndex = 1;
+                        break;
+                    case "boarding-q2":
+                        dataIndex = 2;
+                        break;
+                    case "boarding-q3":
+                        dataIndex = 3;
+                        break;
+                    case "boarding-q4":
+                        dataIndex = 4;
+                        break;
+                }
+
+                if (dataIndex !== -1) {
+                    selectActiveData(boardingData[dataIndex])
+                }
+
+                //toggle active class
+                d3.select(".boarding a.evt.active")
+                    .classed("active", false);
+                d3.select("#" + id)
+                    .classed("active", true);
+
+                updateChart();
+            });
+    }
+
+    function processRawData(d) {
+        //normalize by total and multiply by multiplier
+        let normalizeCols = "total_involuntary involuntary_compensated total_voluntary total_denied total_involuntary_not_compensated".split(" ");
+        const normalizeByCol = "total_boardings";
+        const multiplier = 10000;
+
+        d.forEach((row) => {
+            normalizeCols.forEach((c) => {
+                //normalize each col
+                row[c] = row[c] * multiplier / row[normalizeByCol];
+            })
+        })
+    }
+
+    function updateChart() {
+
+        //bars - update
+        let bars = svg.selectAll(".bar")
+            .data(activeData);
+
+        bars.transition()
+            .duration(650)
+            .attr("width", function (d) {
+                return x(d[activeCol]);
+            });
+
+        //bars - enter
+        bars.enter()
+            .append("rect")
+            .attr("x", margin.left)
+            .attr("class", "bar red")
+            .attr("height", y.bandwidth())
+            .attr("y", function (d) {
+                return y(d["carrier"]);
+            })
+            .attr("width", function (d) {
+                return x(d[activeCol]);
+            });
+
+        //bars - exit
+        bars.exit()
+            .remove();
+
+        /* TEXT LABELS */
+        //update
+        let labels = svg.selectAll(".bar-label")
+            .data(activeData)
+            .text((d) => formatter(d[activeCol]));
+        labels.transition()
+            .duration(650)
+            .attr("x", (d) => x(d[activeCol]) + 160);
+
+        //enter
+        labels.enter()
+            .append("text")
+            .attr("class", "bar-label")
+            .attr("x", (d) => x(d[activeCol]) + 160)
+            .attr("y", (d) => y(d["carrier"]) + y.bandwidth() / 2)
+            .text((d) => formatter(d[activeCol]))
+            .style("dominant-baseline", "middle")
+            .style("text-anchor", "left");
+
+        //exit
+        labels.exit()
+            .remove();
+
+    }
+
+    function renderChart() {
+        x = d3.scaleLinear()
+            .domain([0, 20])
+            .range([0, width - margin.right - margin.left]);
+
+        y = d3.scaleBand()
+            .domain(activeData.map(function (d) {
+                return d.carrier;
+            }))
+            .range([height - margin.bottom, margin.top])
+            .padding(0.1);
+
+        updateChart();
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(" + margin.left + "," + (height - margin.bottom) + ")")
+            .call(d3.axisBottom(x).tickValues(x.domain()));
+
+
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(d3.axisLeft(y))
+            .attr("transform", "translate(" + margin.left + "," + 0 + ")")
+            //.style("font-size", 12)
+            .style("font-weight", 500);
+
+        svg.append("text")
+            .attr("class", "axis-label")
+            .attr("x", width / 2)
+            .attr("y", height - margin.bottom + 40)
+            .text("# Passengers per 10,000 Boarded")
+            //.style("font-size", 20)
+            .style("text-anchor", "middle")
+    }
+
+    function init(fullData) {
+        fullData = fullData.map(clone);
+        var annual, q1, q2, q3, q4;
+        [annual, q1, q2, q3, q4] = fullData;
+        fullData.forEach(processRawData);
+
+        bindOrgChartHandler();
+        bindTimeFilterHandler(fullData);
+        selectActiveCol("total_denied");
+        selectActiveData(annual);
+        renderChart();
+    }
+
+    return {
+        init
+    }
+
+})();
+
+/**************
+ * DONUT CHART
+ *****************/
+// idea drawn from "https://bl.ocks.org/farazshuja/afd5e5f492fd00dd0ac4644d53716f4e"
+let airlineDonut =
+    (function () {
+        var activeAirline;
+        var activeData;
+        var hover = "Voluntary";
+
+        const width = 500;
+        const height = 500;
+        const radius = Math.min(width, height) / 2;
+
+        let svg = d3.select(".onboard .viz")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate (" + width / 2 + "," + height / 2 + ")");
+
+        var arcgen = d3.arc()
+            .outerRadius(radius - 10)
+            .innerRadius(160);
+
+        function generateCarrierList(carriers) {
+            carriers.forEach((carrier) => {
+                let node = document.createElement("li");
+                let a = document.createElement("a");
+                let textnode = document.createTextNode(carrier);
+                a.setAttribute("href", "#");
+                a.appendChild(textnode);
+                node.appendChild(a);
+                document.querySelector(".onboard .sidebar-filter ul").appendChild(node);
+            });
+
+            //make the first carrier active
+            d3.select(".onboard .sidebar-filter ul a")
+                .classed("active", true);
+        }
+
+        function bindCarrierHandler() {
+            d3.selectAll(".onboard .sidebar-filter ul a")
+                .on("click", function () {
+                    d3.event.preventDefault();
+                    activeAirline = this.text;
+                    d3.select(".onboard .sidebar-filter ul a.active")
+                        .classed("active", false);
+                    this.classList.add("active");
+                    updateChart();
+                })
+        }
+
+        function bindFilterHandler(fullData) {
+            d3.selectAll(".onboard a.evt")
+                .on("click", function () {
+                    d3.event.preventDefault();
+                    let id = this.id;
+
+                    switch (id) {
+                        case "onboard-annual":
+                            activeData = fullData[0];
+                            break;
+                        case "onboard-q1":
+                            activeData = fullData[1];
+                            break;
+                        case "onboard-q2":
+                            activeData = fullData[2];
+                            break;
+                        case "onboard-q3":
+                            activeData = fullData[3];
+                            break;
+                        case "onboard-q4":
+                            activeData = fullData[4];
+                            break;
+                    }
+
+                    //toggle active class
+                    d3.select(".onboard a.evt.active")
+                        .classed("active", false);
+                    d3.select("#" + id)
+                        .classed("active", true);
+
+                    updateChart();
+                });
+        }
+
+        function extractPieData() {
+            let carrierData = activeData.reduce((acc, val) => {
+                if (acc != null) {
+                    return acc;
+                }
+                if (val.key === activeAirline) {
+                    return val.value[0];
+                }
+            }, null);
+            return [
+                {name: "Involuntary", count: carrierData.total_involuntary, color: "#ef3030"},
+                {name: "Voluntary", count: carrierData.total_voluntary, color: "#07ada8"}
+            ];
+        }
+
+        function updateChart() {
+            let data = extractPieData();
+
+            var pie = d3.pie()
+                .sort(null)
+                .value(function (d) {
+                    return d.count;
+                });
+
+            var arcs = svg.selectAll(".arc")
+                .data(pie(data));
+
+
+            let newdata = data.reduce((acc,d) => {
+                if (acc !== null) {
+                    return acc;
+                } else {
+                    if (d.name == hover) {
+                        return d.count;
+                    }
+                    return null;
+                }
+            }, null);
+
+            d3.select("#text-ln-1")
+                .text(newdata);
+            d3.select("text-ln-2")
+                .text(hover);
+
+            arcs.enter()
+                .append("path")
+                .attr("class", "arc")
+                .style("fill", function (d, i) {
+                    return d.data.color;
+                })
+                .attr("d", arcgen)
+                .each(function (d) {
+                    this._current = d;
+                }) // store the initial angles
+                .on("mouseover", function (d) {
+                    d3.select("#text-ln-1")
+                    .text(d.data.count);
+                    d3.select("#text-ln-2")
+                        .text(d.data.name);
+                });
+
+            arcs.transition()
+                .duration(500)
+                .attrTween("d", arcTween);
+        }
+
+        //pie chart transitions borrowed from https://bl.ocks.org/mbostock/1346410
+        function arcTween(a) {
+            var i = d3.interpolate(this._current, a);
+            this._current = i(0);
+            return function (t) {
+                return arcgen(i(t));
+            };
+        }
+
+        function renderChart() {
+            svg.append("text")
+                .attr("id","text-ln-1")
+                .text("")
+                // .attr("x",(radius/2)-200)
+                .attr("text-anchor", "middle")
+                .attr("y", radius / 2 - 150)
+                .style("fill", "white")
+                .attr("font-size",60);
+            svg.append("text")
+                .attr("id","text-ln-2")
+                .text("Voluntary")
+                .attr("y", radius / 2 - 100)
+                .attr("font-size",42)
+                .attr("text-anchor","middle")
+            //.attr("x",width/2)
+
+            updateChart();
+        }
+
+        function processRawData(dataset) {
+            //convert data to percentages
+            dataset.forEach((row) => {
+                let percentageCols = "total_voluntary total_involuntary".split(" ");
+                let totalCol = "total_denied";
+                percentageCols.forEach((col) => {
+                    row[col] = row[col] * 100 / row[totalCol];
+                })
+            });
+            return dataset;
+        }
+
+        function nestData(dataset) {
+            return d3.nest()
+                .key((d) => d["carrier"])
+                .sortKeys(d3.ascending)
+                .rollup(function (d) {
+                    return d;
+                })
+                .entries(dataset);
+        }
+
+        function init(fullData) {
+            fullData = fullData.map(clone)
+            //.map(processRawData)
+                .map(nestData);
+            var annual, q1, q2, q3, q4;
+            [annual, q1, q2, q3, q4] = fullData;
+
+            //get carriers
+            let carriers = annual
+                .map((d) => {
+                    return d.key;
+                });
+
+
+            activeData = annual;
+            activeAirline = "Alaska Airlines";
+            generateCarrierList(carriers);
+            bindFilterHandler(fullData);
+            bindCarrierHandler();
+            renderChart(annual);
+        }
+
+        return {init};
+    })();
+	
+/**************
+ * SCATTERPLOT
+ *****************/
+let relationScatter =
+    (function () {
+        //3/20/17
+        const height = 400;
+        const width = 700;
+        const padding = 60;
+        var xScale, yScale;
+        var activeData;
+        var textActive = false;
+
+        var svg = d3.select(".scatter .viz").append("svg")
+            .attr("height", height + 2 * padding)
+            .attr("width", width + 2 * padding)
+            .append("g").attr("transform", "translate(" + padding + "," + padding + ")");
+
+        var label = svg.append("text")
+            .attr("fill","white")
+            .attr("text-anchor","middle");
+
+        function bindTimeFilterHandler(points2d) {
+            d3.selectAll(".scatter a.evt")
+                .on("click", function () {
+                    d3.event.preventDefault();
+                    let id = this.id;
+
+                    switch (id) {
+                        case "scatter-annual":
+                            activeData = points2d[0];
+                            break;
+                        case "scatter-q1":
+                            activeData = points2d[1];
+                            break;
+                        case "scatter-q2":
+                            activeData = points2d[2];
+                            break;
+                        case "scatter-q3":
+                            activeData = points2d[3];
+                            break;
+                        case "scatter-q4":
+                            activeData = points2d[4];
+                            break;
+                    }
+
+                    //toggle active class
+                    d3.select(".scatter a.evt.active")
+                        .classed("active", false);
+                    d3.select("#" + id)
+                        .classed("active", true);
+
+                    updateChart();
+                });
+        }
+
+        function processBoardingRawData(d) {
+            //normalize by total and multiply by multiplier
+            let normalizeCol = "total_denied";
+            const normalizeByCol = "total_boardings";
+            const multiplier = 10000;
+
+            return d.map((row) => {
+                let normalized = row[normalizeCol] * multiplier / row[normalizeByCol];
+                return {key: row["carrier"], value: normalized};
+            })
+        }
+
+        function updateChart() {
+            let points = activeData;
+
+
+
+            var circles = svg.selectAll("circle")
+                .data(points);
+
+            circles.transition()
+                .duration(500)
+                .attr("cx", function (d) {
+                    return xScale(d.delay);
+                })
+                .attr("cy", function (d) {
+                    return yScale(d.denied);
+                });
+
+
+
+
+            if (textActive) {
+                let newd = points.reduce((acc,d) => {
+                    if (acc !== null) {
+                        return acc;
+                    } else {
+                        if (d.name == textActive.name) {
+                            return d;
+                        }
+                        return null;
+                    }
+                }, null);
+                label.transition()
+                    .duration(500)
+                    .attr("x", xScale(newd.delay))
+                    .attr("y", yScale(newd.denied)-15)
+                    .text(textActive.name);
+            }
+
+            circles.enter()
+                .append("circle")
+                //.merge(circles)
+                .attr("r", 7)
+                .attr("fill", "white")
+                .on("mouseover", function (d) {
+                    d3.select(this).style("opacity",1.0);
+
+                    textActive = d;
+                    label.attr("x", xScale(d.delay))
+                        .attr("y", yScale(d.denied)-15)
+                        .text(d.name);
+                })
+                .on("mouseout", function(d) {
+                    d3.select(this).style("opacity",0.6);
+                })
+                .style("opacity", 0.6)
+                .attr("fill","#ef3030")
+                .attr("cx", function (d) {
+                    return xScale(d.delay);
+                })
+                .attr("cy", function (d) {
+                    return yScale(d.denied);
+                });
+
+        }
+
+        function renderChart() {
+            xScale = d3.scaleLinear().domain([0, 90]).range([0, width]);
+            yScale = d3.scaleLinear().domain([0, 20]).range([height, 0]);
+
+            var xAxis = d3.axisBottom(xScale);
+
+            svg.append("g")
+                .call(xAxis)
+                .attr("class","x axis")
+                .attr("transform", "translate(0, " + (height) + ")");
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", height + 45)
+                .style("text-anchor", "middle")
+                .text("Time Delayed (mins)");
+
+            var yAxis = d3.axisLeft(yScale);
+            svg.append("g").call(yAxis).attr("class","y axis");
+
+            svg.append("text")
+                .attr("transform", "rotate(270)")
+                .attr("x", -width / 2).attr("y", -35).text("# Denied Boarding per 10,000 Boarded");
+
+            updateChart();
+        }
+
+
+        function init(aggregateDelays, fullBoardingData) {
+            aggregateDelays = clone(aggregateDelays);
+
+            //make aggregate delays same format as boarding data
+            let quarterlyDelays = aggregateDelays.quarterlyAirlineAvg.map((v) => v.values);
+            let reformattedAggregateDelays = [aggregateDelays.annualAirlineAvg, ...quarterlyDelays];
+
+            boardingArray = fullBoardingData.map(clone)
+                .map(processBoardingRawData);
+            let points2d = reformattedAggregateDelays.map((agdataset, ind) => {
+                let boardingDataSet = boardingArray[ind];
+                return agdataset.map((agrow, ind) => {
+                    let boardingRow = boardingDataSet[ind];
+                    if (agrow.key !== boardingRow.key) {
+                        console.log("mismatch", agrow.key, boardingRow.key);
+                        return null;
+                    } else {
+                        return {name: agrow.key, delay: agrow.value, denied: boardingRow.value};
+                    }
+
+                });
+            });
+
+            bindTimeFilterHandler(points2d);
+            activeData = points2d[0];
+            renderChart();
+
+
+        }
+
+        return {init}
+    })();
+
+d3.queue()
+.defer(d3.csv, "data/aggregated/delay.csv")
+.defer(d3.csv, "data/airline_id.csv")
+.defer(d3.csv, "data/boarding_2016.csv")
+.defer(d3.csv, "data/boarding_2016_1q.csv")
+.defer(d3.csv, "data/boarding_2016_2q.csv")
+.defer(d3.csv, "data/boarding_2016_3q.csv")
+.defer(d3.csv, "data/boarding_2016_4q.csv")
+.await(function (error, delays, airlineIds, ...fullBoardingData) {
+	if (error) {
+		console.log("Failed to load files", error);
+	} else {
+		var aggregateDelays = preprocessDelaysData(delays, airlineIds);
+		delaysChart.init(aggregateDelays);
+
+		fullBoardingData.forEach(preprocessBoardingData);
+		deniedBarchart.init(fullBoardingData);
+		airlineDonut.init(fullBoardingData);
+		relationScatter.init(aggregateDelays,fullBoardingData);
+
+	}
+
+});
+</script>
+	<!--
+<script src="main.js"></script>
+<script src="delays2.js"></script>
+<script src="denied.js"></script>
+<script src="onboard.js"></script>
+<script src="scatter.js"></script>
+-->
+</body>
+</html>
