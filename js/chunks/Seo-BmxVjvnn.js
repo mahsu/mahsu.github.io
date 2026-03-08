@@ -85,7 +85,7 @@ const $$Seo = createComponent(($$result, $$props, $$slots) => {
       content: metaDescription
     }
   ];
-  return renderTemplate`<!-- Google tag (gtag.js) -->${renderTemplate(_a || (_a = __template(['<script async src="https://www.googletagmanager.com/gtag/js?id=G-XED9479LCW"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag() {\n    dataLayer.push(arguments);\n  }\n  gtag("js", new Date());\n\n  gtag("consent", "default", {\n      ad_storage: "denied",\n      ad_user_data: "denied",\n      ad_personalization: "denied",\n      analytics_storage: "denied",\n  });\n\n  gtag("config", "G-XED9479LCW");\n</script>'])))}<title>${fullTitle}</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="generator"${addAttribute(Astro2.generator, "content")}>${metaTags.map((m) => renderTemplate`<meta${addAttribute(m.name, "name")}${addAttribute(m.property, "property")}${addAttribute(m.content, "content")}>`)}`;
+  return renderTemplate`${renderTemplate(_a || (_a = __template(['<script defer src="https://cloud.umami.is/script.js" data-website-id="0451f4a8-82de-4af2-b4c6-532e232139b6"></script>'])))}<title>${fullTitle}</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="generator"${addAttribute(Astro2.generator, "content")}>${metaTags.map((m) => renderTemplate`<meta${addAttribute(m.name, "name")}${addAttribute(m.property, "property")}${addAttribute(m.content, "content")}>`)}`;
 }, "/Users/matthewhsu/co/personal-site/src/components/Seo.astro", void 0);
 
 export { $$Seo as $, $$Nav as a, siteMetadata as s };

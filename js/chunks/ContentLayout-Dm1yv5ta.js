@@ -1,6 +1,6 @@
 import { b as createAstro, c as createComponent, r as renderTemplate, a as renderComponent, d as renderHead, e as renderSlot, f as addAttribute } from './astro/server-HtdsE5wA.js';
 import 'kleur/colors';
-import { $ as $$Seo, a as $$Nav } from './Seo-ZIKjrX12.js';
+import { $ as $$Seo, a as $$Nav } from './Seo-BmxVjvnn.js';
 /* empty css                          */
 /* empty css                          */
 
