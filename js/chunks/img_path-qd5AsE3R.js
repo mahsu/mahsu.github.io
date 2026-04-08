@@ -10,7 +10,7 @@ const LARGE_IMAGE_QUALITY_PARAMS = {
 };
 const SMALL_IMAGE_QUALITY_PARAMS = {
   maxWidthPx: 500,
-  quality: 80
+  quality: 75
 };
 const getPortfolioImgResponse = async (pathSegment, size) => {
   let qualityParams;

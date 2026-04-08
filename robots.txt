@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://matthewhsu.me/sitemap-index.xml

@@ -1,8 +1,8 @@
-import { l as listGalleryImages } from './gallery_image_metadata-JoJ0HvFs.js';
+import { l as listGalleryImages } from './gallery_image_metadata-DCW4FsLn.js';
 
 const IMAGES_PER_PAGE = 10;
-function getGalleryPageData(pageIndex) {
-  const images = listGalleryImages();
+async function getGalleryPageData(pageIndex) {
+  const images = await listGalleryImages();
   const totalPageCount = Math.ceil(images.length / IMAGES_PER_PAGE) || 1;
   const index = Math.max(0, Math.min(pageIndex, totalPageCount - 1));
   const start = index * IMAGES_PER_PAGE;
